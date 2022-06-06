@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Início</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let dados of dadosDashboard" sizeMd="3" sizeXs="12">
+        <app-card-dashboard [dados]="{title: dados.title, subtitle: dados.subtitle, urlImg: dados.urlImg}"></app-card-dashboard>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <app-calendar></app-calendar>
+        
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>  
+  
+  
+</ion-content>

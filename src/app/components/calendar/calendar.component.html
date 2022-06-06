@@ -1,0 +1,58 @@
+<ion-card>
+  
+      <swiper
+        [loop]="true"
+        (reachEnd)="chegouFim()"
+        (reachBeginning)="reComecou()"
+        [initialSlide]="monthNowNumber"
+      >
+        <ng-template swiperSlide *ngFor="let item of dataMonths">
+          <ion-grid style="padding: 0px">
+            <ion-row style="padding: 5px; font-size: larger">
+              {{ months[item.month] }} {{ item.year }}
+            </ion-row>
+            <ion-row>
+              <ion-grid style="padding: 0px">
+                <ion-row class="border-week">
+                  <ion-col size="1.7142" *ngFor="let day of weekdays">{{ day }}</ion-col>
+                </ion-row>
+                <ion-row
+                  *ngFor="
+                    let row of item.arrayDays.slice(
+                      0,
+                      (item.arrayDays.length / n) % 1 === 0
+                        ? item.arrayDays.length / n
+                        : item.arrayDays.length / n + 1
+                    );
+                    let idx = index
+                  "
+                >
+                  <ion-col size="1.7142" 
+                    class="borderDays"
+                    *ngFor="let x of item.arrayDays.slice(idx * n, idx * n + n)"
+                  >
+                    <ion-grid (click)="showPopover($event)">
+                      <ion-row [ngClass]="isToday(x) ? 'today' : 'dias'">
+                        <ion-col>{{ formatDay(x)}}</ion-col>
+                      </ion-row>
+                      <ion-row [ngClass]="{isEvent: event(x)}">
+                        <ion-col *ngIf="event(x)">{{events[0].descricao}}</ion-col>
+                        
+                                                
+                      </ion-row>
+                      <ion-row>
+                        <ion-col *ngIf="event(x)" style="text-align: center; padding: 2px;">
+                          <div class="nEvents">{{events.length}}</div>
+                        </ion-col>                        
+                      </ion-row>
+                    </ion-grid>
+                    
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-row>
+          </ion-grid>
+        </ng-template>
+      </swiper>
+    
+</ion-card>

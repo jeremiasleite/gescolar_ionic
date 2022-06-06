@@ -1,0 +1,60 @@
+@import '~swiper/scss';
+@import '~@ionic/angular/css/ionic-swiper';
+
+.border-week {
+    border-width: 1px;    
+    border-bottom-style: solid;
+    border-color: lightgray;
+    font-weight: bold;
+    color: black;
+    font-size: small;
+}
+
+.borderDays {
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgray; 
+    height: 70px;
+    padding: 0px;
+}
+
+.today{
+    color: white;    
+    border-radius: 50%;
+    background-color: blue;    
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    font-size: small;
+    text-align: center;
+    font-weight: bold;  
+}
+
+ion-row.dias {
+    text-align: center;
+    color: black;
+    font-size: small;
+}
+
+ion-row.isEvent{
+    border-radius: 4px;
+    padding-left: 4px;
+    background-color: #009688;
+    height: 100%;
+    white-space: nowrap;
+    font-size: x-small;
+    overflow: hidden;
+    text-overflow: clip;
+    color: white;
+}
+
+.nEvents {    
+    background-color: orange;
+    border-radius: 50%;            
+    width: 11px;
+    height: 11px;    
+    font-size: x-small;    
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}

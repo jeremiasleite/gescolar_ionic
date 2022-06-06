@@ -117,3 +117,13 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+.custom-menu {
+  --width: 300px;
+}
+.split-pane-md.split-pane-visible>.split-pane-side {
+  min-width: 50px;
+  max-width: 22%;
+  border-right: var(--border);
+  border-left: 0;
+}
